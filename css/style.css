@@ -45,10 +45,23 @@ img {
 .main_img {
     height: 100%;
     display: none;
+    position: relative;
 }
 
 .active_main {
     display: block;
+}
+
+.text {
+    color: white;
+    text-align: right;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+.text p {
+    font-size: 20px;
 }
 
 /* sezione SLIDER di DESTRA con le immagini piccole */
@@ -72,7 +85,7 @@ img {
     right: 0;
 }
 
-.active_thub {
+.active_thumb {
     background-color: transparent;
     border: 3px solid #cccccc;
 }
@@ -103,16 +116,16 @@ img {
 /* .debug .slider {
     background-color: green;
 } */
-
+/* 
 .debug .main_images {
     background-color: red;
 }
 
-/* .debug .thumbnails {
+.debug .thumbnails {
     background-color: blue;
-} */
+}
 
 .debug .thumbnail {
     background-color: yellow;
     border: 1px solid black;
-}
+} */

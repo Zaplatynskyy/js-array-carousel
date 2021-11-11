@@ -8,3 +8,60 @@
 // titolo e
 // testo. Allo stesso tempo nelle miniature l'immagine attiva dovrà apparire in evidenza rispetto alle altre.
 // BONUS: Aggiungere il ciclo infinito del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso l'alto, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente clicca la freccia verso il basso.
+
+const items = [
+    'img/01.jpg',
+    'img/02.jpg',
+    'img/03.jpg',
+    'img/04.jpg',
+    'img/05.jpg'
+];
+
+const title = [
+    'Svezia',
+    'Svizzera',
+    'Gran Bretagna',
+    'Germania',
+    'Paradise'
+]
+
+const text = [
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+    'Lorem ipsum',
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+    'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+]
+
+// ciclo for per inserire le immagini grandi
+const mainImages = document.querySelector('.main_images');
+
+for (let i = 0; i < items.length; i++) {
+    mainImages.innerHTML += `
+                            <div class="main_img">
+                            <img src="${items[i]}" alt="">
+                            
+                            <div class="text">
+                                <h2>${title[i]}</h2>
+                                <p>${text[i]}</p>
+                            </div>
+                            </div>
+                            `
+}
+
+document.querySelector('.main_img').classList.add('active_main');
+
+// ciclo for per inserire le immagini piccole
+const thumbnails = document.querySelector('.thumbnails');
+
+for (let i = 0; i < items.length; i++) {
+    thumbnails.innerHTML += `
+                            <div class="thumbnail">
+                                <div class="layover"></div>
+                                <img src="${items[i]}" alt="">
+                            </div>
+                            `
+}
+
+document.querySelector('.layover').classList.add('active_thumb');
+
