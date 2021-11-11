@@ -1,6 +1,57 @@
-******COMMONS******
+/* ******COMMONS****** */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+/******* sezione SLIDER *******/
+.slider {
+    width: 70%;
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* sezione SLIDER di SINISTRA con immagine grande */
+.main_img {
+    width: 80%;
+}
+
+/* sezione SLIDER di DESTRA con le immagini piccole */
+.thumbnails {
+    width: 20%;
+}
+
+
+/* *****DEBUG***** */
+/* .debug .slider {
+    background-color: green;
+} */
+
+.debug .main_img {
+    height: 100%;
+    background-color: red;
+}
+
+.debug .thumbnails {
+    height: 100%;
+    background-color: blue;
 }
