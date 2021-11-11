@@ -63,5 +63,16 @@ for (let i = 0; i < items.length; i++) {
                             `
 }
 
+// bottoni freccia su e giu inseriti dinamicamente per farli stare alla fine (altrimenti mi scompaiono sotto le immagini a causa del position)
+thumbnails.innerHTML += `
+                        <div class="btn up">
+                        <i class="fas fa-chevron-up"></i>
+                        </div>
+                        <div class="btn down">
+                        <i class="fas fa-chevron-down"></i>
+                        </div>
+                        `
+;
+
 document.querySelector('.layover').classList.add('active_thumb');
 
