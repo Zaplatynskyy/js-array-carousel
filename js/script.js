@@ -34,9 +34,9 @@ const text = [
 ]
 
 // ciclo for per inserire le immagini grandi
-const mainImages = document.querySelector('.main_images');
-
 for (let i = 0; i < items.length; i++) {
+    const mainImages = document.querySelector('.main_images');
+
     mainImages.innerHTML += `
                             <div class="main_img">
                             <img src="${items[i]}" alt="">
@@ -48,13 +48,12 @@ for (let i = 0; i < items.length; i++) {
                             </div>
                             `
 }
-
 document.querySelector('.main_img').classList.add('active_main');
 
 // ciclo for per inserire le immagini piccole
-const thumbnails = document.querySelector('.thumbnails');
-
 for (let i = 0; i < items.length; i++) {
+    const thumbnails = document.querySelector('.thumbnails');
+
     thumbnails.innerHTML += `
                             <div class="thumbnail">
                                 <div class="layover"></div>
@@ -62,9 +61,10 @@ for (let i = 0; i < items.length; i++) {
                             </div>
                             `
 }
+document.querySelector('.layover').classList.add('active_thumb');
 
 // bottoni freccia su e giu inseriti dinamicamente per farli stare alla fine (altrimenti mi scompaiono sotto le immagini a causa del position)
-thumbnails.innerHTML += `
+document.querySelector('.thumbnails').innerHTML += `
                         <div class="btn up">
                         <i class="fas fa-chevron-up"></i>
                         </div>
@@ -74,5 +74,70 @@ thumbnails.innerHTML += `
                         `
 ;
 
-document.querySelector('.layover').classList.add('active_thumb');
+const buttonUp = document.querySelector('.up');
+const buttonDown = document.querySelector('.down');
 
+// al click del pottone verso il basso scorri verso l'immagine in basso
+buttonDown.addEventListener("click",
+    function() {
+        const mainImgArray = document.getElementsByClassName('main_img');
+        const layoverArray = document.getElementsByClassName('layover');
+        let num;
+
+        // ciclo for per individuare la posizione dell'active
+        for (let i = 0; i < title.length; i++) {
+            let main_img = mainImgArray[i].className;
+
+            if (main_img == 'main_img active_main') {
+                num = i;
+            }
+        }
+
+        // rimozione classe active da entrambe le colonne
+        mainImgArray[num].classList.remove('active_main');
+        layoverArray[num].classList.remove('active_thumb');
+        
+
+        if(num != (title.length - 1)) {
+            // se non è in ultima posizione, assegna active al successivo elemento
+            mainImgArray[num + 1].classList.add('active_main');
+            layoverArray[num + 1].classList.add('active_thumb');
+        } else {
+            // altrimenti se in ultima posizione, assegna active al primo elemento
+            mainImgArray[0].classList.add('active_main');
+            layoverArray[0].classList.add('active_thumb');
+        }
+    }
+)
+
+// al click del pottone verso l'alto scorri verso l'immagine in alto
+buttonUp.addEventListener("click",
+    function() {
+        const mainImgArray = document.getElementsByClassName('main_img');
+        const layoverArray = document.getElementsByClassName('layover');
+        let num;
+
+        // ciclo for per individuare la posizione dell'active
+        for (let i = 0; i < title.length; i++) {
+            let main_img = mainImgArray[i].className;
+
+            if (main_img == 'main_img active_main') {
+                num = i;
+            }
+        }
+
+        // rimozione classe active da entrambe le colonne
+        mainImgArray[num].classList.remove('active_main');
+        layoverArray[num].classList.remove('active_thumb');
+        
+        if(num != 0) {
+            // se non è in prima posizione, assegna active al precedente elemento
+            mainImgArray[num - 1].classList.add('active_main');
+            layoverArray[num - 1].classList.add('active_thumb');
+        } else {
+            // altrimenti se in prima posizione, assegna active all'ultimo elemento
+            mainImgArray[title.length - 1].classList.add('active_main');
+            layoverArray[title.length - 1].classList.add('active_thumb');
+        }
+    }
+)

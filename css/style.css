@@ -54,7 +54,11 @@ img {
 
 .text {
     color: white;
+    background-color: rgba(0,0,0,.5);
     text-align: right;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-left: 20px;
     position: absolute;
     bottom: 30px;
     right: 20px;
@@ -98,9 +102,18 @@ img {
     font-size: 32px;
     background-color: #cccccc;
     border-radius: 50%;
+    cursor: pointer;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+.btn:active {
+    background-color: #e4e4e4;
 }
 
 .btn.up {
