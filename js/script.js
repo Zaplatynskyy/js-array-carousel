@@ -56,7 +56,6 @@ for (let i = 0; i < items.length; i++) {
 
     thumbnails.innerHTML += `
                             <div class="thumbnail">
-                                <div class="layover"></div>
                                 <img src="${items[i]}" alt="">
                             </div>
                             `
@@ -149,32 +148,32 @@ for (let i = 0; i < items.length; i++) {
 const buttonUp = document.querySelector('.up');
 const buttonDown = document.querySelector('.down');
 const mainImgArray = document.getElementsByClassName('main_img');
-const layoverArray = document.getElementsByClassName('layover');
+const thumbnailArray = document.getElementsByClassName('thumbnail');
 
 let num = 0;
 
 mainImgArray[num].classList.add('active');
-layoverArray[num].classList.add('active');
+thumbnailArray[num].classList.add('active');
 
 // al click del pottone verso il basso scorri verso l'immagine in basso
 buttonDown.addEventListener("click",
     function() {
         // rimozione classe active da entrambe le colonne
         mainImgArray[num].classList.remove('active');
-        layoverArray[num].classList.remove('active');      
+        thumbnailArray[num].classList.remove('active');      
 
         num++;
 
         if(num != title.length) {
             // se non è in ultima posizione, assegna active al successivo elemento
             mainImgArray[num].classList.add('active');
-            layoverArray[num].classList.add('active');
+            thumbnailArray[num].classList.add('active');
 
         } else {
             // altrimenti se in ultima posizione, assegna active al primo elemento
             num = 0;
             mainImgArray[0].classList.add('active');
-            layoverArray[0].classList.add('active');
+            thumbnailArray[0].classList.add('active');
         }
     }
 )
@@ -184,18 +183,18 @@ buttonUp.addEventListener("click",
     function() {
         //rimozione classe active da entrambe le colonne
         mainImgArray[num].classList.remove('active');
-        layoverArray[num].classList.remove('active');
+        thumbnailArray[num].classList.remove('active');
         
         if(num != 0) {
             //se non è in prima posizione, assegna active al precedente elemento
             num--;
             mainImgArray[num].classList.add('active');
-            layoverArray[num].classList.add('active');
+            thumbnailArray[num].classList.add('active');
         } else {
             //altrimenti se in prima posizione, assegna active all'ultimo elemento
             num = title.length - 1;
             mainImgArray[num].classList.add('active');
-            layoverArray[num].classList.add('active');
+            thumbnailArray[num].classList.add('active');
         }
     }
 )

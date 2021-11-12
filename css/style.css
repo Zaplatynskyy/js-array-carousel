@@ -72,27 +72,28 @@ img {
 .thumbnails {
     width: 20%;
     height: 100%;
+    background-color: black;
     position: relative;
 }
 
 .thumbnail {
     height: calc(100% / 5);
-    position: relative;
+    opacity: .5;
 }
 
-.layover {
+.thumbnail.active {
+    opacity: 1;
+    border: 3px solid #cccccc;
+}
+
+/* .layover {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-}
-
-.layover.active {
-    background-color: transparent;
-    border: 3px solid #cccccc;
-}
+} */
 
 .btn {
     width: 40px;
