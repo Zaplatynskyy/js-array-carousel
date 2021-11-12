@@ -86,15 +86,6 @@ img {
     border: 3px solid #cccccc;
 }
 
-/* .layover {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-} */
-
 .btn {
     width: 40px;
     height: 40px;
@@ -126,21 +117,12 @@ img {
     bottom: 10px;
 }
 
-
-/* *****DEBUG***** */
-/* .debug .slider {
-    background-color: green;
-} */
-/* 
-.debug .main_images {
-    background-color: red;
-}
-
-.debug .thumbnails {
-    background-color: blue;
-}
-
-.debug .thumbnail {
-    background-color: yellow;
-    border: 1px solid black;
+/* x il layover opacity, cambiando anche la proprietà dell'active */
+/* .layover {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 } */
