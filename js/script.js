@@ -22,8 +22,9 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-// ciclo for per inserire le immagini grandi
+// ciclo for per inserire le immagini 
 for (let i = 0; i < items.length; i++) {
+    // ciclo for per inserire le immagini grandi
     const mainImages = document.querySelector('.main_images');
 
     mainImages.innerHTML += `
@@ -36,17 +37,15 @@ for (let i = 0; i < items.length; i++) {
                             </div>
                             </div>
                             `
-}
 
-// ciclo for per inserire le immagini piccole
-for (let i = 0; i < items.length; i++) {
+    // ciclo for per inserire le immagini piccole                        
     const thumbnails = document.querySelector('.thumbnails');
 
     thumbnails.innerHTML += `
                             <div class="thumbnail">
                                 <img src="${items[i]}" alt="">
                             </div>
-                            `
+                            `                        
 }
 
 // seconda soluzione milestone 3
