@@ -15,14 +15,14 @@ const title = [
 ]
 
 const text = [
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+    'Lorem, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
     'Lorem ipsum',
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-// ciclo for per inserire le immagini 
+// ciclo for per inserire le immagini
 for (let i = 0; i < items.length; i++) {
     // ciclo for per inserire le immagini grandi
     const mainImages = document.querySelector('.main_images');
@@ -30,7 +30,7 @@ for (let i = 0; i < items.length; i++) {
     mainImages.innerHTML += `
                             <div class="main_img">
                             <img src="${items[i]}" alt="">
-                            
+
                             <div class="text">
                                 <h2>${title[i]}</h2>
                                 <p>${text[i]}</p>
@@ -38,14 +38,14 @@ for (let i = 0; i < items.length; i++) {
                             </div>
                             `
 
-    // ciclo for per inserire le immagini piccole                        
+    // ciclo for per inserire le immagini piccole
     const thumbnails = document.querySelector('.thumbnails');
 
     thumbnails.innerHTML += `
                             <div class="thumbnail">
                                 <img src="${items[i]}" alt="">
                             </div>
-                            `                        
+                            `
 }
 
 // seconda soluzione milestone 3
@@ -64,7 +64,7 @@ buttonDown.addEventListener("click",
     function() {
         // rimozione classe active da entrambe le colonne
         mainImgArray[num].classList.remove('active');
-        thumbnailArray[num].classList.remove('active');      
+        thumbnailArray[num].classList.remove('active');
 
         num++;
 
@@ -88,7 +88,7 @@ buttonUp.addEventListener("click",
         //rimozione classe active da entrambe le colonne
         mainImgArray[num].classList.remove('active');
         thumbnailArray[num].classList.remove('active');
-        
+
         if(num != 0) {
             //se non è in prima posizione, assegna active al precedente elemento
             num--;
@@ -143,7 +143,7 @@ buttonUp.addEventListener("click",
 //         // rimozione classe active da entrambe le colonne
 //         mainImgArray[num].classList.remove('active');
 //         layoverArray[num].classList.remove('active');
-        
+
 
 //         if(num != (title.length - 1)) {
 //             // se non è in ultima posizione, assegna active al successivo elemento
@@ -176,7 +176,7 @@ buttonUp.addEventListener("click",
 //         // rimozione classe active da entrambe le colonne
 //         mainImgArray[num].classList.remove('active');
 //         layoverArray[num].classList.remove('active');
-        
+
 //         if(num != 0) {
 //             // se non è in prima posizione, assegna active al precedente elemento
 //             mainImgArray[num - 1].classList.add('active');
